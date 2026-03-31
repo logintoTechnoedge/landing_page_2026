@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your submission to Login360 Software Training Institute. Our team will contact you shortly with course details and free demo.">
+    <title>Thank You - Login360 IT Training Institute</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --primary-dark: #E55A2B;
+            --secondary: #004E89;
+            --accent: #1DD1A1;
+            --dark: #0A0E27;
+            --light: #F5F7FA;
+            --white: #FFFFFF;
+            --gray: #6B7280;
+            --gray-light: #E5E7EB;
+            --success: #10B981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            background: linear-gradient(135deg, #F5F7FA 0%, #FFF9F7 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ===== BACKGROUND DECORATION ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -150px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(29, 209, 161, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* ===== SUCCESS CHECKMARK ===== */
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary), #ff8555);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.25);
+            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .success-icon::after {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            opacity: 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .content {
+            text-align: center;
+            animation: slideInUp 0.7s ease-out 0.2s both;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .subtext {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features-section {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--gray-light);
+            animation: slideInUp 0.7s ease-out 0.4s both;
+        }
+
+        .features-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1.8rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.2rem;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #FFF9F7, white);
+            border: 2px solid var(--gray-light);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .feature-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .feature-text {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            background: linear-gradient(135deg, var(--secondary), var(--dark));
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 78, 137, 0.2);
+            animation: slideInUp 0.7s ease-out 0.6s both;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-phone {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* ===== BUTTONS ===== */
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+            animation: slideInUp 0.7s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 14px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #25D366, #1cd460);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.35);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--secondary);
+            border: 2.5px solid var(--secondary);
+            box-shadow: 0 4px 15px rgba(0, 78, 137, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 78, 137, 0.2);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            font-size: 1.2rem;
+        }
+
+        /* ===== FOOTER MESSAGE ===== */
+        .footer-message {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            animation: fadeIn 0.8s ease-out 1s both;
+        }
+
+        .footer-message p {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-message strong {
+            color: var(--dark);
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            height: 1px;
+            background: var(--gray-light);
+            margin: 2rem 0 1.5rem;
+        }
+
+        /* ===== TIMER SECTION ===== */
+        .timer-section {
+            background: rgba(29, 209, 161, 0.1);
+            border: 2px solid var(--accent);
+            border-radius: 14px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            animation: slideInUp 0.7s ease-out 1s both;
+        }
+
+        .timer-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .timer-text {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1.5rem 1rem;
+                min-height: auto;
+                padding-top: 2rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .subtext {
+                font-size: 1rem;
+            }
+
+            .success-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .features-section {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .feature-item {
+                padding: 1rem;
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .feature-text {
+                font-size: 0.9rem;
+            }
+
+            .contact-section {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-phone {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-buttons {
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .btn {
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .divider {
+                margin: 1.5rem 0 1rem;
+            }
+        }
+
+        /* ===== TABLET ADJUSTMENTS ===== */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .success-icon,
+            .cta-buttons {
+                display: none;
+            }
+
+            .container {
+                min-height: auto;
+                padding: 1rem;
+            }
+        }
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-1 {
+            margin-top: 1rem;
+        }
+
+        .mt-2 {
+            margin-top: 2rem;
+        }
+
+        /* ===== SCROLLBAR STYLING ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- SUCCESS ICON -->
+        <div class="success-icon">
+            <i class="fas fa-check"></i>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="content">
+            <h1>🎉 Thank You! Your details have been submitted successfully.</h1>
+            <p class="subtext">
+                Our team will contact you shortly with course details and a free demo session.
+            </p>
+        </div>
+
+        <!-- TIMER / EXPECTATION SECTION -->
+        <div class="timer-section">
+            <div class="timer-label">⏱️ Expected Response Time</div>
+            <div class="timer-text">You'll hear from us within 10 minutes</div>
+        </div>
+
+        <!-- WHY LOGIN360 SECTION -->
+        <div class="features-section">
+            <h2 class="features-title">Why Choose Login360?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🤖</div>
+                    <div class="feature-text">AI Integrated Courses</div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <div class="feature-text">Industry Expert Trainers</div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💼</div>
+                    <div class="feature-text">Real-Time Project Training</div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">100% Placement Support</div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">📄</div>
+                    <div class="feature-text">Resume & Interview Prep</div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">Affordable Fees</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <div class="contact-section">
+            <div class="contact-label">Need Quick Response?</div>
+            <div class="contact-phone">80564 77261</div>
+            <div class="contact-desc">
+                Call or WhatsApp us anytime between 9 AM - 9 PM
+            </div>
+        </div>
+
+        <!-- CTA BUTTONS -->
+        <div class="cta-buttons">
+            <a href="https://wa.me/918056477261" target="_blank" class="btn btn-primary">
+                <i class="fab fa-whatsapp"></i> Join WhatsApp Now
+            </a>
+        </div>
+
+        <!-- FOOTER MESSAGE -->
+        <div class="footer-message">
+            <p><strong>🎓 Courses Available:</strong> Java, Python, Data Analytics, Data Science , UI UX , Digital Marketing , AWS Devops</p>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll to contact section
+        function scrollToContact() {
+            // This can be connected to your booking system
+            alert('Please check your email or WhatsApp for the booking link. You can also call us at 87546 87537');
+        }
+
+        // Optional: Track page view in analytics
+        window.addEventListener('load', function() {
+            console.log('Thank you page loaded');
+            // You can add your analytics tracking code here
+            // Example: gtag('event', 'page_view', { 'page_path': '/thank-you' });
+        });
+
+        // Prevent page refresh notification
+        window.addEventListener('beforeunload', function(e) {
+            // Uncomment if you want to prevent accidental page closure
+            // if (true) {
+            //     e.preventDefault();
+            //     e.returnValue = '';
+            // }
+        });
+    </script>
+</body>
+</html>
