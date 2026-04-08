@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login360 – Become a Full Stack Developer & Get Placed in 3–4 Months | Chennai</title>
+<meta name="description" content="Login360 Software Training Institute Chennai – Full Stack, Data Science, Data Analytics. 5000+ trained, 3000+ placed. Book Free Demo today!">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="./js/gtm-loader.js"></script> 
+<style>
+/* ─── VARIABLES ─── */
+:root{
+  --blue:#FF6B2B; --blue-dk:#e85a1a; --blue-lt:#e8f0fe; --blue-mid:#ee6429;
+  --green:#FF6B2B; --green-dk:#e85a1a; --green-lt:#dcfce7;
+  --bg:#F8FAFC; --white:#ffffff; --text:#0F172A; --muted:#64748b;
+  --border:#e2e8f0; --accent:#FACC15;
+  --r:12px; --r-lg:20px; --r-xl:28px;
+  --sh-sm:0 2px 8px rgba(11,94,215,.08);
+  --sh-md:0 4px 24px rgba(11,94,215,.13);
+  --sh-lg:0 8px 48px rgba(11,94,215,.18);
+  --font:'Poppins',sans-serif;
+  --ls:.3px;
+  --gap-sm:40px; --gap-lg:80px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--text);letter-spacing:var(--ls);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:var(--font);cursor:pointer;border:none;outline:none}
+
+/* ─── KEYFRAMES ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+@keyframes slideUp{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes waBounce{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 0 rgba(11,94,215,.4)}70%{box-shadow:0 0 0 12px rgba(11,94,215,0)}}
+@keyframes numberTick{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ─── SKELETON ─── */
+.skel{background:linear-gradient(90deg,#e2e8f0 25%,#f1f5f9 50%,#e2e8f0 75%);background-size:400px 100%;animation:shimmer 1.4s infinite;border-radius:var(--r)}
+
+/* ─── NAV ─── */
+.nav{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:11px 18px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:9px}
+.brand-box{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;letter-spacing:-.5px;flex-shrink:0}
+.brand-text{font-size:16px;font-weight:800;color:var(--text);line-height:1.1}
+.brand-text em{color:var(--blue);font-style:normal}
+.brand-sub{font-size:9px;color:var(--muted);font-weight:500;letter-spacing:.8px;text-transform:uppercase;display:block;line-height:1}
+.nav-btn{background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:9px 14px;border-radius:8px;transition:background .2s;white-space:nowrap}
+.nav-btn:hover{background:var(--blue-dk)}
+
+/* ─── HERO ─── */
+.hero{width:90%;background:#000;position:relative;overflow:hidden;top: 20px;left:6%;border-radius: 10px;}
+.hero-wrap{position:relative;width:100%}
+.hero-wrap::before{content:'';display:block;padding-top:177.78%}
+.hero-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.35) 100%);transition:opacity .4s}
+.hero-overlay.hidden{opacity:0;pointer-events:none}
+.hero-spinner{width:52px;height:52px;border:3px solid rgba(255,255,255,.18);border-top-color:var(--blue);border-radius:50%;animation:spin 1s linear infinite}
+
+/* ─── SECTION COMMONS ─── */
+.section{padding:var(--gap-sm) 20px}
+.section.alt{background:#fff}
+.section-tag{display:inline-block;background:var(--blue-lt);color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:5px 13px;border-radius:100px;margin-bottom:10px}
+.section-head{text-align:center;margin-bottom:26px}
+.section-head h2{font-size:clamp(20px,5.5vw,32px);font-weight:800;line-height:1.25;letter-spacing:-.3px}
+.section-head p{font-size:14px;color:var(--muted);margin-top:8px;line-height:1.65}
+.highlight{color:var(--blue);position:relative;display:inline-block}
+.highlight::after{content:'';position:absolute;bottom:1px;left:0;right:0;height:3px;background:var(--accent);border-radius:2px;opacity:.8}
+
+/* ─── INTRO ─── */
+.intro{text-align:center}
+.intro-badge{display:inline-flex;align-items:center;gap:6px;background:var(--blue-lt);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:6px 14px;border-radius:100px;margin-bottom:18px}
+.intro h1{font-size:clamp(23px,6vw,38px);font-weight:800;line-height:1.22;margin-bottom:14px;letter-spacing:-.4px}
+.intro-sub{font-size:15px;color:var(--muted);line-height:1.68;max-width:530px;margin:0 auto 28px}
+.intro-sub strong{color:var(--green-dk);font-weight:600}
+
+/* ─── TRUST GRID ─── */
+.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
+.trust-card{background:#fff;border-radius:var(--r);padding:18px 14px;text-align:center;box-shadow:var(--sh-sm);border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.trust-card:hover{transform:translateY(-3px);box-shadow:var(--sh-md)}
+.ti{font-size:28px;display:block;margin-bottom:7px}
+.tn{font-size:22px;font-weight:800;letter-spacing:-.5px;line-height:1}
+.tl{font-size:12px;color:var(--muted);font-weight:500;margin-top:4px;line-height:1.3}
+.trust-card.c-blue .tn{color:var(--blue)}
+.trust-card.c-green .tn{color:var(--green-dk)}
+.trust-card.c-amber .tn{color:#d97706}
+
+/* ─── BUTTONS ─── */
+.btn-p{display:flex;align-items:center;justify-content:center;gap:7px;background:var(--blue);color:#fff;font-size:15px;font-weight:700;height:48px;border-radius:var(--r);transition:background .2s,transform .15s;width:100%;animation:pulse 2.8s ease infinite}
+.btn-p:hover{background:var(--blue-dk);animation:none;transform:translateY(-1px)}
+.btn-s{display:flex;align-items:center;justify-content:center;gap:7px;background:transparent;color:var(--blue);font-size:15px;font-weight:600;height:48px;border-radius:var(--r);border:2px solid var(--blue);transition:background .2s,color .2s;width:100%}
+.btn-s:hover{background:var(--blue);color:#fff}
+.btn-g{display:flex;align-items:center;justify-content:center;gap:7px;background:var(--green);color:#fff;font-size:15px;font-weight:700;height:48px;border-radius:var(--r);transition:background .2s;width:100%}
+.btn-g:hover{background:var(--green-dk)}
+.cta-duo{display:flex;flex-direction:column;gap:12px;max-width:400px;margin:0 auto}
+
+/* ─── COURSES ─── */
+.courses-wrap{overflow-x:auto;display:flex;gap:15px;padding:6px 20px 18px;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.courses-wrap::-webkit-scrollbar{display:none}
+.course-card{min-width:265px;background:#fff;border-radius:var(--r-lg);padding:20px;box-shadow:var(--sh-md);border:1px solid var(--border);scroll-snap-align:start;flex-shrink:0;transition:transform .2s,box-shadow .2s}
+.course-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.cc-emoji{width:34px;margin-bottom:10px;display:block}
+.cc-name{font-size:16px;font-weight:700;margin-bottom:5px;line-height:1.3}
+.cc-dur{font-size:12px;color:var(--muted);font-weight:500;margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.cc-tools{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px}
+.tool{background:var(--blue-lt);color:var(--blue);font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px}
+.cc-placed{display:flex;align-items:center;gap:5px;background:var(--green-lt);color:#15803d;font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;margin-bottom:14px}
+.btn-enroll{width:100%;background:var(--blue);color:#fff;font-family:var(--font);font-size:14px;font-weight:700;height:42px;border-radius:10px;transition:background .2s}
+.btn-enroll:hover{background:var(--blue-dk)}
+.swipe-hint{text-align:center;font-size:12px;color:var(--muted);margin-top:4px;padding:0 20px}
+.scroll-dots{display:flex;justify-content:center;gap:5px;margin-top:12px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--border);transition:all .2s}
+.dot.on{background:var(--blue);width:20px;border-radius:3px}
+
+/* ─── VIDEO CARDS ─── */
+.vid-list{display:flex;flex-direction:column;gap:16px}
+.vid-card{background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);border:1px solid var(--border)}
+.vid-frame{position:relative;width:100%;padding-top:56.25%;background:#0f172a;overflow:hidden}
+.vid-frame.vt{padding-top:177.78%}
+.vid-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.vid-skel{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#1e293b 0%,#0f172a 100%);transition:opacity .4s}
+.vid-skel.off{opacity:0;pointer-events:none}
+.play-btn{width:52px;height:52px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.3);backdrop-filter:blur(6px)}
+.play-btn svg{fill:#fff;width:20px;height:20px;margin-left:3px}
+.vid-info{padding:13px 16px;display:flex;align-items:center;gap:10px}
+.vid-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0}
+.vid-name{font-size:14px;font-weight:700}
+.vid-meta{font-size:12px;color:var(--muted);margin-top:2px}
+.placed-tag{display:inline-flex;align-items:center;gap:3px;background:var(--green-lt);color:#15803d;font-size:10px;font-weight:600;padding:2px 7px;border-radius:5px}
+
+/* ─── REELS GRID ─── */
+.reels-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));gap:11px;width: 100%;max-width: 1000px;margin: 0 auto;justify-content: center;}
+.reel-card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm);border:1px solid var(--border);width: 100%;}
+.reel-frame{position:relative;width:100%;padding-top:177.78%;background:#0f172a;overflow:hidden;height:95%}
+.reel-frame .instagram-media {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  min-width: 100% !important;
+}
+.reel-label{padding:9px 10px;font-size:13px;font-weight:600;line-height:1.3;text-align: center;border-top: 1px solid #f1f5f9;}
+
+/* ─── CLASS GRID ─── */
+.class-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.cls-card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm);border:1px solid var(--border)}
+.cls-frame{position:relative;width:100%;padding-top:56.25%;background:#0f172a;overflow:hidden}
+.cls-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.cls-label{padding:8px 10px;font-size:11px;font-weight:600}
+
+/* ─── PROJECTS ─── */
+.project-cards{display:flex;flex-direction:column;gap:16px}
+.proj-card{background:#fff;border-radius:var(--r-lg);padding:20px;box-shadow:var(--sh-md);border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.proj-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.proj-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.proj-emoji{font-size:32px}
+.proj-outcome{background:var(--green-lt);color:#15803d;font-size:10px;font-weight:700;padding:4px 8px;border-radius:7px;white-space:nowrap}
+.proj-name{font-size:16px;font-weight:800;margin-bottom:6px}
+.proj-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:12px}
+.proj-stack{display:flex;flex-wrap:wrap;gap:5px}
+.stack-tag{background:#f1f5f9;color:var(--text);font-size:10px;font-weight:600;padding:3px 8px;border-radius:6px}
+.proj-demos{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.demo-card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm);border:1px solid var(--border)}
+.demo-frame{position:relative;width:100%;padding-top:56.25%;background:#0f172a;overflow:hidden}
+.demo-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+.demo-label{padding:8px 10px;font-size:11px;font-weight:600;color:var(--text)}
+
+/* ─── CONVERSION SECTION ─── */
+.convert{background:linear-gradient(135deg,var(--blue) 0%,#1a4fa8 100%);color:#fff;padding:var(--gap-sm) 20px;position:relative;overflow:hidden}
+.convert::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:rgba(255,255,255,.05);border-radius:50%}
+.convert::after{content:'';position:absolute;bottom:-80px;left:-40px;width:200px;height:200px;background:rgba(255,255,255,.04);border-radius:50%}
+.convert-inner{position:relative;z-index:1}
+.convert-tag{display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:5px 13px;border-radius:100px;margin-bottom:14px}
+.convert h2{font-size:clamp(22px,6vw,36px);font-weight:800;line-height:1.22;margin-bottom:14px;letter-spacing:-.4px}
+.convert .sub{font-size:14px;opacity:.85;line-height:1.6;margin-bottom:22px}
+.benefits-list{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+.benefit-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500}
+.benefit-item span.icon{width:24px;height:24px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.urgency-box{background:rgba(250,204,21,.15);border:1.5px solid rgba(250,204,21,.5);border-radius:var(--r);padding:13px 16px;margin-bottom:22px;display:flex;align-items:center;gap:10px}
+.urgency-box .badge{background:var(--accent);color:#0f172a;font-size:11px;font-weight:800;padding:3px 9px;border-radius:7px;white-space:nowrap}
+.urgency-box p{font-size:13px;font-weight:600;opacity:.95}
+
+/* ─── MINI FORM ─── */
+.mini-form{background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-lg);padding:22px 18px}
+.mf-title{font-size:16px;font-weight:700;margin-bottom:16px;text-align:center}
+.fg{margin-bottom:13px}
+.fg label{display:block;font-size:12px;font-weight:600;margin-bottom:5px;opacity:.85}
+.fg input,.fg select{width:100%;font-family:var(--font);font-size:15px;color:var(--text);background:#fff;border:1.5px solid transparent;border-radius:var(--r);padding:0 13px;height:48px;outline:none;transition:border-color .2s,box-shadow .2s;letter-spacing:.2px;appearance:none}
+.fg input:focus,.fg select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(11,94,215,.15)}
+.fg input::placeholder{color:#94a3b8}
+.ph-wrap{position:relative}
+.ph-pfx{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:15px;font-weight:600;color:var(--muted)}
+.ph-wrap input{padding-left:44px}
+.fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:38px}
+.form-btns{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.btn-white{display:flex;align-items:center;justify-content:center;gap:7px;background:var(--blue);color:var(--blue-lt);font-family:var(--font);font-size:15px;font-weight:700;height:52px;border-radius:var(--r);transition:background .2s;width:100%}
+.btn-white:hover{background:var(--blue-dk)}
+.btn-outline-white{display:flex;align-items:center;justify-content:center;gap:7px;background:transparent;color:#fff;font-family:var(--font);font-size:15px;font-weight:600;height:52px;border-radius:var(--r);border:2px solid rgba(255,255,255,.6);transition:all .2s;width:100%}
+.btn-outline-white:hover{background:rgba(255,255,255,.15)}
+.trust-line{text-align:center;font-size:12px;opacity:.75;margin-top:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+
+/* ─── BRANCHES ─── */
+.branch-grid{display:flex;flex-direction:column;gap:16px}
+.branch-card{background:#fff;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-md);border:1px solid var(--border);transition:transform .2s,box-shadow .2s}
+.branch-card:hover{transform:translateY(-3px);box-shadow:var(--sh-lg)}
+.branch-map{width:100%;height:180px;background:linear-gradient(135deg,#e8f0fe 0%,#dbeafe 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.branch-map iframe{width:100%;height:100%;border:none}
+.branch-map-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
+.branch-map-ph .map-icon{font-size:42px}
+.branch-map-ph .map-city{font-size:16px;font-weight:700;color:var(--blue)}
+.branch-info{padding:18px}
+.branch-type{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:10px}
+.branch-type.hq{background:#fef3c7;color:#92400e}
+.branch-type.ps{background:var(--green-lt);color:#15803d}
+.branch-type.nb{background:var(--blue-lt);color:var(--blue)}
+.branch-name{font-size:17px;font-weight:800;margin-bottom:4px}
+.branch-addr{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.btn-dir{display:inline-flex;align-items:center;gap:6px;background:var(--blue);color:#fff;font-family:var(--font);font-size:13px;font-weight:600;padding:9px 18px;border-radius:9px;transition:background .2s}
+.btn-dir:hover{background:var(--blue-dk)}
+
+/* ─── STICKY BAR ─── */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:400;background:#fff;border-top:1px solid var(--border);padding:12px 14px;display:flex;gap:9px;box-shadow:0 -4px 24px rgba(11,94,215,.1);animation:slideUp .5s ease .9s both}
+.sticky-bar .btn-p,.sticky-bar .btn-s{flex:1;animation:none;height:48px;font-size:13px;font-weight:700}
+.sticky-spacer{height:80px}
+
+/* ─── WHATSAPP ─── */
+.wa-btn{position:fixed;bottom:82px;right:18px;z-index:450;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);animation:waBounce 2s ease infinite;text-decoration:none}
+.wa-btn svg{width:28px;height:28px;fill:#fff}
+.wa-tooltip{position:absolute;right:60px;top:50%;transform:translateY(-50%);background:#0f172a;color:#fff;font-size:11px;font-weight:600;padding:5px 10px;border-radius:8px;white-space:nowrap;opacity:0;transition:opacity .2s}
+.wa-btn:hover .wa-tooltip{opacity:1}
+
+/* ─── MODAL ─── */
+.overlay{position:fixed;inset:0;z-index:600;background:rgba(15,23,42,.6);backdrop-filter:blur(7px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.on{opacity:1;pointer-events:all}
+.modal{background:#fff;border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:26px 22px 30px;transform:translateY(40px);transition:transform .35s cubic-bezier(.34,1.56,.64,1);max-height:90vh;overflow-y:auto;position:relative}
+.overlay.on .modal{transform:translateY(0)}
+.modal-handle{width:40px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 18px}
+.modal-head{text-align:center;margin-bottom:22px}
+.modal-head h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.modal-head p{font-size:13px;color:var(--muted);line-height:1.5}
+.mclose{position:absolute;top:14px;right:14px;width:30px;height:30px;background:var(--bg);border:none;border-radius:50%;cursor:pointer;font-size:16px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:background .2s}
+.mclose:hover{background:var(--border)}
+.btn-submit{width:100%;background:var(--blue);color:#fff;font-family:var(--font);font-size:15px;font-weight:700;height:52px;border-radius:var(--r);transition:background .2s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:6px;animation:glowPulse 2s infinite}
+.btn-submit:hover{background:var(--blue-dk);animation:none}
+.privacy{font-size:11px;color:var(--muted);text-align:center;margin-top:9px;line-height:1.5}
+.success-box{text-align:center;padding:16px 0;display:none}
+.success-box.on{display:block}
+.success-emoji{font-size:56px;display:block;margin-bottom:14px}
+.success-box h3{font-size:22px;font-weight:800;margin-bottom:8px}
+.success-box p{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* ─── FOOTER ─── */
+.footer{background:var(--text);color:rgba(255,255,255,.75);padding:32px 20px;text-align:center}
+.ft-logo{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px}
+.ft-logo em{color:var(--green);font-style:normal}
+.ft-addr{font-size:13px;line-height:1.75;margin-bottom:14px}
+.ft-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-bottom:14px}
+.ft-links a{font-size:12px;color:rgba(255,255,255,.55);transition:color .2s}
+.ft-links a:hover{color:#fff}
+.ft-copy{font-size:11px;color:rgba(255,255,255,.3)}
+
+/* ─── REVEAL ANIMATION ─── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.shown{opacity:1;transform:translateY(0)}
+
+/* ─── DESKTOP ─── */
+@media(min-width:768px){
+  .hero-wrap::before{padding-top:56.25%}
+  .section{padding:var(--gap-lg) 40px}
+  .trust-grid{grid-template-columns:repeat(4,1fr);max-width:800px;margin-left:auto;margin-right:auto}
+  .cta-duo{flex-direction:row;max-width:500px}.btn-p,.btn-s{height:56px;font-size:16px}
+  .courses-wrap{padding:6px 40px 18px}
+  .vid-list{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .reels-grid{grid-template-columns:repeat(3,1fr);gap:14px;max-width:880px;margin:0 auto}
+  .class-grid{grid-template-columns:repeat(3,1fr);gap:14px}
+  .project-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .proj-demos{grid-template-columns:repeat(4,1fr)}
+  .branch-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .form-btns{flex-direction:row}
+  .benefits-list{display:grid;grid-template-columns:1fr 1fr}
+  .sticky-bar{display:none}.sticky-spacer{display:none}
+  .overlay{align-items:center}.modal{border-radius:24px;max-width:460px;margin:20px}
+  .footer{padding:48px 40px}
+  .wa-btn{bottom:24px;right:24px}
+}
+@media(min-width:1024px){
+  .section{padding:var(--gap-lg) 60px}
+  .courses-wrap{display:grid;grid-template-columns:repeat(4,1fr);overflow-x:unset;padding:6px 60px 18px}
+  .course-card{min-width:unset;max-width:unset}
+  .swipe-hint,.scroll-dots{display:none}
+  .vid-list{grid-template-columns:repeat(2,1fr)}
+  .proj-demos{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- ╔══ NAV ══╗ -->
+<nav class="nav">
+  <div class="nav-brand">
+    <img class="brand-box" src="./images/login.png">
+    <div>
+      <span class="brand-text"><em>Login</em>360</span>
+      <span class="brand-sub">Software Training Institute</span>
+    </div>
+  </div>
+  <button class="nav-btn" onclick="openPopup('Home - Book Free Demo')">Free Demo 🎓</button>
+</nav>
+
+<!-- ╔══ S1: HERO ══╗ -->
+<section class="hero" aria-label="Login360 Success Meet Video">
+  <div class="hero-wrap">
+    <div class="hero-overlay" id="heroOvl">
+      <div class="hero-spinner"></div>
+    </div>
+    <!-- ⚠️ Replace VIDEO_ID with your actual YouTube success meet video ID -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/9bdfTR64aIE?si=TaIHZpy0R9mYCvZe&autoplay=1&start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+
+<!-- ╔══ S2: INTRO + TRUST + CTA ══╗ -->
+<section class="section intro" id="intro">
+  <div class="intro-badge reveal">🏆 Chennai's #1 Placement-Focused Institute</div>
+  <h1 class="reveal">
+    Become a <span class="highlight">Full Stack Developer</span><br>
+    &amp; Get Placed in 3–4 Months 🚀
+  </h1>
+  <p class="intro-sub reveal">
+    No Coding Knowledge? We train you <strong>from absolute scratch</strong> and provide
+    <strong>100% Placement Support</strong> until you land your dream IT job.
+  </p>
+  <div class="trust-grid reveal">
+    <div class="trust-card c-blue"><span class="ti">🎓</span><div class="tn">5000+</div><div class="tl">Students Trained</div></div>
+    <div class="trust-card c-green"><span class="ti">💼</span><div class="tn">3000+</div><div class="tl">Students Placed</div></div>
+    <div class="trust-card c-amber"><span class="ti">⭐</span><div class="tn">4.8★</div><div class="tl">Google Rating</div></div>
+    <div class="trust-card c-green"><span class="ti">✅</span><div class="tn">100%</div><div class="tl">Placement Support</div></div>
+  </div>
+  <div class="cta-duo reveal">
+    <button class="btn-p" onclick="openPopup('Home - Book Free Demo')">📅 Book Free Demo Class</button>
+    <button class="btn-s" onclick="openPopup('Home - Apply Now')">✍️ Apply Now</button>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0 20px">
+
+<!-- ╔══ S3: COURSES ══╗ -->
+<section class="section" id="courses">
+  <div class="section-head reveal">
+    <span class="section-tag">📚 Courses</span>
+    <h2>Choose Your <span class="highlight">Career Path</span></h2>
+    <p>Industry-aligned programs with real-world projects &amp; dedicated placement support</p>
+  </div>
+  <div class="courses-wrap" id="cCarousel">
+    <!-- Card 1 -->
+    <div class="course-card reveal">
+      <img class="cc-emoji" src="./images/java.png"> 
+      <div class="cc-name">Java Full Stack</div>
+      <div class="cc-dur">⏱ 3–4 Months</div>
+      <div class="cc-tools">
+        <span class="tool">Java</span><span class="tool">Spring Boot</span><span class="tool">React</span>
+        <span class="tool">MySQL</span><span class="tool">Hibernate</span><span class="tool">Git</span>
+      </div>
+      <div class="cc-placed">✅ 100% Placement Support</div>
+      <button class="btn-enroll" onclick="openPopup('Home - Java Full Stack')">Enroll Now →</button>
+    </div>
+    <!-- Card 2 -->
+    <div class="course-card reveal">
+      <img class="cc-emoji" src="./images/python.png">
+      <div class="cc-name">Python Full Stack</div>
+      <div class="cc-dur">⏱ 3–4 Months</div>
+      <div class="cc-tools">
+        <span class="tool">Python</span><span class="tool">Django</span><span class="tool">React</span>
+        <span class="tool">PostgreSQL</span><span class="tool">REST API</span><span class="tool">AWS</span>
+      </div>
+      <div class="cc-placed">✅ 100% Placement Support</div>
+      <button class="btn-enroll" onclick="openPopup('Home - Python Full Stack')">Enroll Now →</button>
+    </div>
+    <!-- Card 3 -->
+    <div class="course-card reveal">
+      <img class="cc-emoji" src="./images/data-analytics.png">
+      <div class="cc-name">Data Analytics</div>
+      <div class="cc-dur">⏱ 3 Months</div>
+      <div class="cc-tools">
+        <span class="tool">Excel</span><span class="tool">SQL</span><span class="tool">Python</span>
+        <span class="tool">Power BI</span><span class="tool">Tableau</span><span class="tool">Statistics</span>
+      </div>
+      <div class="cc-placed">✅ 100% Placement Support</div>
+      <button class="btn-enroll" onclick="openPopup('Home - Data Analytics')">Enroll Now →</button>
+    </div>
+    <!-- Card 4 -->
+    <div class="course-card reveal">
+      <img class="cc-emoji" src="./images/ds.png">
+      <div class="cc-name">Data Science</div>
+      <div class="cc-dur">⏱ 4 Months</div>
+      <div class="cc-tools">
+        <span class="tool">Python</span><span class="tool">ML</span><span class="tool">Pandas</span>
+        <span class="tool">Scikit-learn</span><span class="tool">Deep Learning</span><span class="tool">NLP</span>
+      </div>
+      <div class="cc-placed">✅ 100% Placement Support</div>
+      <button class="btn-enroll" onclick="openPopup('Home - Data Science')">Enroll Now →</button>
+    </div>
+  </div>
+  <p class="swipe-hint">👈 Swipe to explore all courses</p>
+  <div class="scroll-dots">
+    <div class="dot on"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0 20px">
+
+<!-- ╔══ S4: PLACED STUDENTS ══╗ -->
+<section class="section alt" id="placements">
+  <div class="section-head reveal">
+    <span class="section-tag">💼 Placements</span>
+    <h2>Real Students. Real Placements 💼</h2>
+    <p>Watch our alumni share their placement success stories</p>
+  </div>
+  <div class="vid-list">
+    <!-- ⚠️ Replace REVIEW_ID_1–4 with actual YouTube video IDs -->
+    <div class="vid-card reveal">
+      <div class="vid-frame"><div class="vid-skel" id="rs1"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <iframe src="https://www.youtube.com/embed/YRaN8Re1_iE?si=X6VCxsqsVPugSIRp" loading="lazy" allowfullscreen title="Placed Student 1" onload="document.getElementById('rs1').classList.add('off')"></iframe></div>
+      <div class="vid-info"><div class="vid-av" style="background:linear-gradient(135deg,#0B5ED7,#1a6ef5)">RK</div><div><div class="vid-name">Rajesh Kumar</div><div class="vid-meta"><span class="placed-tag">✅ Placed at TCS</span></div></div></div>
+    </div>
+    <div class="vid-card reveal">
+      <div class="vid-frame"><div class="vid-skel" id="rs2"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <iframe src="https://www.youtube.com/embed/q_mdWphcl08?si=X6VCxsqsVPugSIRp" loading="lazy" allowfullscreen title="Placed Student 2" onload="document.getElementById('rs2').classList.add('off')"></iframe></div>
+      <div class="vid-info"><div class="vid-av" style="background:linear-gradient(135deg,#00C897,#0B5ED7)">PD</div><div><div class="vid-name">Priya Devi</div><div class="vid-meta"><span class="placed-tag">✅ Placed at Infosys</span></div></div></div>
+    </div>
+    <div class="vid-card reveal">
+      <div class="vid-frame"><div class="vid-skel" id="rs3"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <iframe src="https://www.youtube.com/embed/unTmLqyoT7M?si=X6VCxsqsVPugSIRp" loading="lazy" allowfullscreen title="Placed Student 3" onload="document.getElementById('rs3').classList.add('off')"></iframe></div>
+      <div class="vid-info"><div class="vid-av" style="background:linear-gradient(135deg,#FACC15,#f97316)">AK</div><div><div class="vid-name">Arun Kumar</div><div class="vid-meta"><span class="placed-tag">✅ Placed at Wipro</span></div></div></div>
+    </div>
+    <div class="vid-card reveal">
+      <div class="vid-frame"><div class="vid-skel" id="rs4"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+      <iframe src="https://www.youtube.com/embed/VhrYyfR3BCo?si=X6VCxsqsVPugSIRp" loading="lazy" allowfullscreen title="Placed Student 4" onload="document.getElementById('rs4').classList.add('off')"></iframe></div>
+      <div class="vid-info"><div class="vid-av" style="background:linear-gradient(135deg,#8b5cf6,#0B5ED7)">SM</div><div><div class="vid-name">Sowmya M</div><div class="vid-meta"><span class="placed-tag">✅ Placed at HCL</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0 20px">
+
+<!-- ╔══ S5: STUDENT FEEDBACK (REELS) ══╗ -->
+<section class="section" id="feedback">
+  <div class="section-head reveal">
+    <span class="section-tag">❤️ Student Love</span>
+    <h2>What Our Students Say ❤️</h2>
+    <p>Unscripted, raw feedback from our alumni</p>
+  </div>
+  <div class="reels-grid reveal"> 
+    <div class="reel-card">
+      <div class="reel-frame">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DNhf3H-Juum/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DNhf3H-Juum/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DNhf3H-Juum/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Login360° (@login360chennai)</a></p></div></blockquote>
+      </div>
+      <div class="reel-label">Kavitha – Java Batch</div>
+    </div>
+    <div class="reel-card">
+      <div class="reel-frame">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DNcpfa2xUrx/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DNcpfa2xUrx/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DNcpfa2xUrx/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Login360° (@login360chennai)</a></p></div></blockquote>
+      </div>
+      <div class="reel-label">Kavitha – Java Batch</div>
+    </div>
+    <div class="reel-card">
+      <div class="reel-frame">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DR6L8oiiRxt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DR6L8oiiRxt/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DR6L8oiiRxt/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Login360° (@login360chennai)</a></p></div></blockquote>
+      </div>
+      <div class="reel-label">Kavitha – Java Batch</div>
+    </div>
+    <div class="reel-card">
+      <div class="reel-frame">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DWanlWZifGF/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DWanlWZifGF/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DWanlWZifGF/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Login360° (@login360chennai)</a></p></div></blockquote>
+      </div>
+      <div class="reel-label">Kavitha – Java Batch</div>
+    </div>
+    <div class="reel-card">
+      <div class="reel-frame">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DWQWQu_icYC/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DWQWQu_icYC/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DWQWQu_icYC/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Login360° (@login360chennai)</a></p></div></blockquote>
+      </div>
+      <div class="reel-label">Kavitha – Java Batch</div>
+    </div>
+    <div class="reel-card">
+      <div class="reel-frame">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DWYy3hUCVYi/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/DWYy3hUCVYi/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/reel/DWYy3hUCVYi/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Login360° (@login360chennai)</a></p></div></blockquote>
+      </div>
+      <div class="reel-label">Kavitha – Java Batch</div>
+    </div>
+  </div>
+</section>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0 20px">
+
+<!-- ╔══ S6: LIVE CLASSROOM ══╗ -->
+<section class="section alt" id="classroom">
+  <div class="section-head reveal">
+    <span class="section-tag">🎥 Classroom</span>
+    <h2>Inside Our Live Classes 🎥</h2>
+    <p>Interactive, hands-on sessions with industry-experienced trainers</p>
+  </div>
+  <div class="class-grid reveal">
+    <!-- ⚠️ Replace CLASS_ID_1–6 with actual YouTube class video IDs -->
+    <div class="cls-card"><div class="cls-frame"><div class="vid-skel" id="cl1"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/EZK2vW9u620?si=Armlcc7kw97Ah_Jj" loading="lazy" allowfullscreen title="Class Session 1" onload="document.getElementById('cl1').classList.add('off')"></iframe></div><div class="cls-label">Java – OOP Concepts</div></div>
+    <div class="cls-card"><div class="cls-frame"><div class="vid-skel" id="cl2"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/Pki54nQGrlQ?si=LNEnzA-Zu5j0shBW" loading="lazy" allowfullscreen title="Class Session 2" onload="document.getElementById('cl2').classList.add('off')"></iframe></div><div class="cls-label">Python – Data Structures</div></div>
+    <div class="cls-card"><div class="cls-frame"><div class="vid-skel" id="cl3"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/unTmLqyoT7M?si=WhJFcaMCxdZEO3I-" loading="lazy" allowfullscreen title="Class Session 3" onload="document.getElementById('cl3').classList.add('off')"></iframe></div><div class="cls-label">React – Component Design</div></div>
+    <div class="cls-card"><div class="cls-frame"><div class="vid-skel" id="cl4"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/7hHA-d053ck?si=WhJFcaMCxdZEO3I-" loading="lazy" allowfullscreen title="Class Session 4" onload="document.getElementById('cl4').classList.add('off')"></iframe></div><div class="cls-label">SQL – Database Design</div></div>
+    <div class="cls-card"><div class="cls-frame"><div class="vid-skel" id="cl5"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/yFEwSVrhXWY?si=ugdPT_nIDajeHuVI" loading="lazy" allowfullscreen title="Class Session 5" onload="document.getElementById('cl5').classList.add('off')"></iframe></div><div class="cls-label">Power BI – Dashboards</div></div>
+    <div class="cls-card"><div class="cls-frame"><div class="vid-skel" id="cl6"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/aqN6q4ouGr8?si=Eac1htsNMrtLwXnI" loading="lazy" allowfullscreen title="Class Session 6" onload="document.getElementById('cl6').classList.add('off')"></iframe></div><div class="cls-label">ML – Model Training</div></div>
+  </div>
+</section>
+
+<hr style="border:none;border-top:1px solid var(--border);margin:0 20px">
+
+<!-- ╔══ S7: STUDENT PROJECTS ══╗ -->
+<section class="section" id="projects">
+  <div class="section-head reveal">
+    <span class="section-tag">💻 Projects</span>
+    <h2>Build Real Projects &amp;<br><span class="highlight">Become Job-Ready</span> 💻</h2>
+    <p>Students build real-time industry projects that go directly into their resume</p>
+  </div>
+  <div class="project-cards">
+    <div class="proj-card reveal">
+      <div class="proj-top"><span class="proj-emoji">🛒</span><span class="proj-outcome">Resume-Ready</span></div>
+      <div class="proj-name">E-Commerce App</div>
+      <div class="proj-desc">Full-featured online store with product listings, cart, checkout, payment integration, and admin dashboard.</div>
+      <div class="proj-stack"><span class="stack-tag">React</span><span class="stack-tag">Spring Boot</span><span class="stack-tag">MySQL</span><span class="stack-tag">Stripe API</span></div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-top"><span class="proj-emoji">💼</span><span class="proj-outcome">Industry-Level</span></div>
+      <div class="proj-name">Job Portal</div>
+      <div class="proj-desc">Job seekers browse listings, apply, and track applications. Employers post jobs and manage candidates end-to-end.</div>
+      <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">Django</span><span class="stack-tag">React</span><span class="stack-tag">PostgreSQL</span></div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-top"><span class="proj-emoji">📈</span><span class="proj-outcome">Data Analyst Project</span></div>
+      <div class="proj-name">Data Dashboard</div>
+      <div class="proj-desc">Interactive analytics dashboard with real-time KPIs, charts, filters, and drill-down capabilities for business decisions.</div>
+      <div class="proj-stack"><span class="stack-tag">Power BI</span><span class="stack-tag">Python</span><span class="stack-tag">SQL</span><span class="stack-tag">Tableau</span></div>
+    </div>
+    <div class="proj-card reveal">
+      <div class="proj-top"><span class="proj-emoji">🤖</span><span class="proj-outcome">AI Project</span></div>
+      <div class="proj-name">AI Chatbot</div>
+      <div class="proj-desc">Context-aware conversational AI chatbot with NLP, intent recognition, and multi-turn dialog support.</div>
+      <div class="proj-stack"><span class="stack-tag">Python</span><span class="stack-tag">NLP</span><span class="stack-tag">Flask</span><span class="stack-tag">TensorFlow</span></div>
+    </div>
+    <div class="proj-card reveal" style="grid-column:1/-1">
+      <div class="proj-top"><span class="proj-emoji">🎓</span><span class="proj-outcome">Full Stack Project</span></div>
+      <div class="proj-name">Student Management System</div>
+      <div class="proj-desc">Complete student lifecycle management: admissions, attendance, marks, reports, and notifications.</div>
+      <div class="proj-stack"><span class="stack-tag">Java</span><span class="stack-tag">Spring MVC</span><span class="stack-tag">React</span><span class="stack-tag">MySQL</span><span class="stack-tag">JWT Auth</span></div>
+    </div>
+  </div>
+
+  <!-- Project demo videos -->
+  <div style="margin-top:24px">
+    <div class="section-head reveal" style="margin-bottom:16px">
+      <h3 style="font-size:17px;font-weight:700">🎬 Watch Project Demos</h3>
+    </div>
+    <div class="proj-demos reveal">
+      <!-- ⚠️ Replace DEMO_ID_1–4 with actual YouTube project demo video IDs -->
+      <div class="demo-card"><div class="demo-frame"><div class="vid-skel" id="dm1"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/_WtlKB8sqzg?si=RqzpMlRBhuHwQ094" loading="lazy" allowfullscreen title="Project Demo 1" onload="document.getElementById('dm1').classList.add('off')"></iframe></div><div class="demo-label">E-Commerce Demo</div></div>
+      <div class="demo-card"><div class="demo-frame"><div class="vid-skel" id="dm2"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/5ehUZptMNL0?si=t1FaMvO1erv3XiNl" loading="lazy" allowfullscreen title="Project Demo 2" onload="document.getElementById('dm2').classList.add('off')"></iframe></div><div class="demo-label">Job Portal Demo</div></div>
+      <div class="demo-card"><div class="demo-frame"><div class="vid-skel" id="dm3"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/HY3e-TOnKVc?si=yJT0ZQ24uBmeJWOa" loading="lazy" allowfullscreen title="Project Demo 3" onload="document.getElementById('dm3').classList.add('off')"></iframe></div><div class="demo-label">Dashboard Demo</div></div>
+      <div class="demo-card"><div class="demo-frame"><div class="vid-skel" id="dm4"><div class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div><iframe src="https://www.youtube.com/embed/B4RN3Nv57Js?si=ynCFx4uAkM4Mn19f" loading="lazy" allowfullscreen title="Project Demo 4" onload="document.getElementById('dm4').classList.add('off')"></iframe></div><div class="demo-label">AI Chatbot Demo</div></div>
+    </div>
+  </div>
+  <div style="margin-top:24px;max-width:400px;margin-left:auto;margin-right:auto" class="reveal">
+    <button class="btn-g" onclick="openPopup('Home - Start Building Projects')">🚀 Start Building Projects Today</button>
+  </div>
+</section>
+
+<!-- ╔══ S8: CONVERSION (CLOSING) ══╗ -->
+<section class="convert" id="apply">
+  <div class="convert-inner">
+    <span class="convert-tag reveal">🚀 Start Your Journey</span>
+    <h2 class="reveal">Start Your IT Career<br>in Just 3–4 Months 🚀</h2>
+    <p class="sub reveal">Join thousands of students who transformed their careers with Login360. No prior coding experience required.</p>
+    <div class="benefits-list reveal">
+      <div class="benefit-item"><span class="icon">✅</span> No coding background needed</div>
+      <div class="benefit-item"><span class="icon">💡</span> Real-time industry projects</div>
+      <div class="benefit-item"><span class="icon">🎯</span> Interview prep &amp; mock sessions</div>
+      <div class="benefit-item"><span class="icon">💼</span> 100% placement support</div>
+      <div class="benefit-item"><span class="icon">🏫</span> Offline + Online modes</div>
+      <div class="benefit-item"><span class="icon">📜</span> Industry certifications</div>
+    </div>
+    <div class="urgency-box reveal">
+      <span class="badge">⚡ URGENT</span>
+      <p>Limited Seats — Upcoming Batch Filling Fast!</p>
+    </div>
+    <!-- MINI FORM -->
+    <form class="mini-form reveal" id="enroll-form">
+      <div class="mf-title">📋 Register Now – It's Free!</div>
+      <div id="mfContent">
+        <div class="fg">
+          <label for="mfName">Your Name</label> 
+          <input type="text" id="mfName" placeholder="Enter your full name" name="name" autocomplete="name">
+        </div>
+        <input type="hidden" name="form_type" id="form_type_input" value="Home page - Apply now">
+        <div class="fg">
+          <label for="mfPhone">Phone Number</label>
+          <div class="ph-wrap">
+            <span class="ph-pfx" style="color:#64748b">+91</span>
+            <input type="tel" id="mfPhone" placeholder="10-digit number" name="phone" maxlength="10" inputmode="numeric">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="mfCourse">Course Interested</label>
+          <select id="mfCourse" name="course">
+            <option value="" disabled selected>Select a course</option>
+            <option value="java fullstack">Java Full Stack Development</option>
+            <option value="python fullstack">Python Full Stack Development</option>
+            <option value="data analytics">Data Analytics</option>
+            <option value="data science">Data Science</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label for="mlocation">Location</label>
+          <input type="text" id="mlocation" placeholder="Enter your location" name="location">
+        </div>
+        <div class="form-btns">
+          <button type="submit" class="btn-white form-submit" id="submit-btn">
+            <span class="spinner"></span>
+            <span class="btn-text" id="submit-label">✍️ Apply Now</span>
+          </button> 
+          <!-- <button class="btn-outline-white">📅 Book Free Demo</button> -->
+        </div>
+        <p class="trust-line" style="color:rgba(255,255,255,.75)">📞 We will contact you within 10 minutes</p>
+      </div> 
+    </form>
+  </div>
+</section>
+
+<!-- ╔══ S9: BRANCH LOCATIONS ══╗ -->
+<section class="section" id="branches">
+  <div class="section-head reveal">
+    <span class="section-tag">📍 Locations</span>
+    <h2>Visit Our Branches <span class="highlight">Near You</span> 📍</h2>
+    <p>Walk in anytime for a free counselling session and demo class</p>
+  </div>
+  <div class="branch-grid">
+
+    <!-- Chennai -->
+    <div class="branch-card reveal">
+      <div class="branch-map">
+        <!-- Optional: Replace with real Google Maps embed src for Chennai -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1314.528469298865!2d80.220272663018!3d12.974866172539683!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d3154bf18fb%3A0x706bf6b0e2157ca9!2sLogin360!5e0!3m2!1sen!2sus!4v1775545097135!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="branch-info">
+        <div class="branch-type hq">🏢 Head Office</div>
+        <div class="branch-name">Login360 Chennai</div>
+        <div class="branch-addr">Login360 Software Training Institute,<br>Chennai, Tamil Nadu – 600042<br>📞 +91 80564 77261</div>
+        <a href="https://maps.google.com?q=Login360+Software+Training+Chennai" target="_blank" class="btn-dir">📍 Get Directions</a>
+      </div>
+    </div>
+
+    <!-- Coimbatore -->
+    <div class="branch-card reveal">
+      <div class="branch-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12570.333875015453!2d76.95090015401206!3d11.001846954575461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ebf844910f%3A0x64b495983cdb5896!2sLogin360!5e0!3m2!1sen!2sus!4v1775545300276!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="branch-info">
+        <div class="branch-type ps">💼 Placement Support</div>
+        <div class="branch-name">Login360 Coimbatore</div>
+        <div class="branch-addr">Login360 Software Training Institute,<br>Coimbatore, Tamil Nadu – 641002<br>📞 +91 84386 31211</div>
+        <a href="https://maps.google.com?q=Login360+Software+Training+Coimbatore" target="_blank" class="btn-dir">📍 Get Directions</a>
+      </div>
+    </div>
+
+    <!-- Kerala -->
+    <div class="branch-card reveal">
+      <div class="branch-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7857.849595405104!2d76.33526245528829!3d10.023064610522106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080da4e3a475c5%3A0xc197bda646fe609d!2sLogin360!5e0!3m2!1sen!2sus!4v1775545479360!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="branch-info">
+        <div class="branch-type nb">🌟 New Branch</div>
+        <div class="branch-name">Login360 Kerala</div>  
+        <div class="branch-addr">Login360 Software Training Institute,<br>Kerala – 682030<br>📞 +91 80564 77261</div>
+        <a href="https://maps.google.com?q=Login360+Software+Training+Kerala" target="_blank" class="btn-dir">📍 Get Directions</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STICKY SPACER -->
+<div class="sticky-spacer"></div>
+
+<!-- ╔══ FOOTER ══╗ -->
+<footer class="footer">
+  <div class="ft-logo"><em>Login</em>360</div>
+  <div class="ft-addr"> Chennai | Coimbatore | Kerala, India<br>📞 +91 80564 77261 &nbsp;•&nbsp; 🌐 info@login360.in</div>
+  <div class="ft-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Use</a>
+    <a href="#">Refund Policy</a>
+    <a href="#">Contact Us</a>
+    <a href="#">Careers</a>
+  </div>
+  <div class="ft-copy">© 2024 Login360 Software Training Institute. All rights reserved.</div>
+</footer>
+
+<!-- ╔══ STICKY BOTTOM BAR (Mobile) ══╗ -->
+<div class="sticky-bar" role="navigation" aria-label="Quick Actions">
+  <button class="btn-s" onclick="openPopup('Home - Apply Now')">✍️ Apply Now</button>
+  <button class="btn-p" onclick="openPopup('Home - Book Free Demo')">📅 Book Demo</button>
+</div>
+
+<!-- ╔══ WHATSAPP FLOATING BTN ══╗ -->
+<!-- ⚠️ Replace YOUR_WHATSAPP_NUMBER with actual number (e.g. 919876543210) -->
+<a class="wa-btn" href="https://wa.me/918056477261?text=Hi%20Login360!%20I%20want%20to%20know%20more%20about%20your%20courses." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <div class="wa-tooltip">Chat with us on WhatsApp</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- ─── POPUP OVERLAY ─────────────────────────────────────────── -->
+<div id="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+
+  <div class="popup-wrapper">
+    <div class="form-card" id="popup-card" data-badge="🎓 Free Career Counselling">
+
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+
+      <!-- FORM STATE -->
+      <div id="form-state">
+        <h3 id="popup-title">Start Your IT Career in 90 Days!</h3>
+
+        <form id="enroll-form-popup">
+
+          <!-- HIDDEN: form_type — set dynamically by openPopup() -->
+          <input type="hidden" name="form_type" id="form_type_popup" value="">
+
+          <div class="form-group">
+            <label for="popup-f-name">Your Full Name *</label>
+            <input type="text" id="popup-f-name" name="name" placeholder="Enter your name" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="popup-f-phone">Mobile Number *</label>
+            <input type="tel" id="popup-f-phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label for="popup-f-location">Your Location *</label>
+            <input type="text" id="popup-f-location" name="location" placeholder="City, State (e.g. Chennai, Tamil Nadu)" autocomplete="address-level2">
+          </div>
+
+          <div class="form-group" id="course_field">
+            <label for="popup-f-course">Select Course *</label>
+            <select id="popup-f-course" name="course">
+              <option value="" disabled selected>Select a course</option>
+              <option value="java fullstack">Java Full Stack Development</option>
+              <option value="python fullstack">Python Full Stack Development</option>
+              <option value="data analytics">Data Analytics</option>
+              <option value="data science">Data Science</option>
+            </select>
+          </div>
+
+          <button type="submit" class="form-submit" id="submit-btn-popup">
+            <span class="spinner"></span>
+            <span class="btn-text" id="submit-label-popup">Submit</span>
+          </button>
+
+          <p class="form-note">🔒 100% Free &amp; No Spam. We'll call you within 30 minutes!</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+/* ── CAROUSEL DOTS ── */
+const car=document.getElementById('cCarousel');
+const dots=document.querySelectorAll('.dot');
+if(car){
+  car.addEventListener('scroll',()=>{
+    const idx=Math.round(car.scrollLeft/(car.scrollWidth/dots.length));
+    dots.forEach((d,i)=>d.classList.toggle('on',i===Math.min(idx,dots.length-1)));
+  },{passive:true});
+}
+
+/* ── REVEAL ON SCROLL ── */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('shown');io.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+</script>
+<script src="./js/script.js"></script>
+</body>
+</html>

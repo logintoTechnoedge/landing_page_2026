@@ -1,0 +1,175 @@
+:root {
+--brand: #FF6B2B;
+--brand-dark: #e85a1a;
+--brand-light: #fff3ee;
+--navy: #0D1B2A;
+--navy2: #1a2e44;
+--teal: #00C9A7;
+--yellow: #FFD60A;
+--light: #F5F7FA;
+--white: #ffffff;
+--text: #2D3748;
+--muted: #718096;
+--border: #E2E8F0;
+--success: #38A169;
+--radius: 16px;
+--shadow: 0 4px 24px rgba(13,27,42,0.10);
+--shadow-lg: 0 12px 40px rgba(13,27,42,0.16);
+}
+
+/* FORM CARD */
+.form-card {
+background: var(--white); border-radius: 20px;
+padding: 32px 28px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+position: relative;
+}
+.form-card::before {
+content: '🎓 Free Career Counselling';
+position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+background: var(--brand); color: var(--white);
+padding: 6px 18px; border-radius: 20px; font-size: 0.8rem; font-weight: 700;
+white-space: nowrap; font-family: 'Sora', sans-serif;
+}
+.form-card h3 { font-size: 1.2rem; text-align: center; margin-bottom: 20px; color: var(--navy); }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+.form-group input, .form-group select {
+width: 100%; padding: 12px 14px; border: 1.5px solid var(--border);
+border-radius: 10px; font-size: 0.95rem; font-family: 'DM Sans', sans-serif;
+outline: none; transition: border 0.2s; color: var(--text); background: var(--white);
+}
+.form-group input:focus, .form-group select:focus { border-color: var(--brand); }
+.form-submit {
+width: 100%; padding: 15px; background: var(--brand); color: var(--white);
+border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+cursor: pointer; font-family: 'Sora', sans-serif; transition: all 0.2s;
+margin-top: 6px; letter-spacing: 0.3px;
+}
+.form-submit:hover { background: var(--brand-dark); transform: translateY(-1px); }
+.form-note { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 10px; }
+
+/* ─── FORM CARD ─────────────────────────────────────────── */
+.form-card {
+background: var(--white);
+border-radius: 20px;
+padding: 36px 28px 28px;
+box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+position: relative;
+}
+.form-card::before {
+content: attr(data-badge);
+position: absolute;
+top: -14px;
+left: 50%;
+transform: translateX(-50%);
+background: var(--brand);
+color: var(--white);
+padding: 6px 18px;
+border-radius: 20px;
+font-size: 0.8rem;
+font-weight: 700;
+white-space: nowrap;
+font-family: 'Sora', sans-serif;
+}
+
+/* Close button */
+.popup-close {
+position: absolute;
+top: 14px;
+right: 16px;
+width: 30px;
+height: 30px;
+border: none;
+background: var(--light);
+border-radius: 50%;
+font-size: 1rem;
+line-height: 30px;
+text-align: center;
+cursor: pointer;
+color: var(--muted);
+transition: background 0.15s, color 0.15s;
+font-family: 'DM Sans', sans-serif;
+}
+.popup-close:hover { background: var(--border); color: var(--navy); }
+
+/* ─── SUBMIT BUTTON ─────────────────────────────────────── */
+.form-submit {
+width: 100%;
+padding: 15px;
+background: var(--brand);
+color: var(--white);
+border: none;
+border-radius: 10px;
+font-size: 1rem;
+font-weight: 700;
+cursor: pointer;
+font-family: 'Sora', sans-serif;
+transition: all 0.2s;
+margin-top: 6px;
+letter-spacing: 0.3px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+}
+.form-submit:hover:not(:disabled) {
+background: var(--brand-dark);
+transform: translateY(-1px);
+}
+.form-submit:disabled {
+opacity: 0.7;
+cursor: not-allowed;
+}
+.form-submit .spinner {
+width: 16px; height: 16px;
+border: 2px solid rgba(255,255,255,0.4);
+border-top-color: #fff;
+border-radius: 50%;
+animation: spin 0.7s linear infinite;
+display: none;
+}
+.form-submit.loading .spinner { display: block; }
+.form-submit.loading .btn-text { opacity: 0.8; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes shake {
+0%,100% { transform: translateX(0); }
+20%      { transform: translateX(-6px); }
+40%      { transform: translateX(6px); }
+60%      { transform: translateX(-4px); }
+80%      { transform: translateX(4px); }
+}
+/* ─── OVERLAY / BACKDROP ────────────────────────────────── */
+#popup-overlay {
+position: fixed;
+inset: 0;
+z-index: 9000;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 20px;
+
+/* Blurry semi-transparent backdrop */
+background: rgba(13, 27, 42, 0.55);
+backdrop-filter: blur(6px);
+-webkit-backdrop-filter: blur(6px);
+
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.25s ease;
+}
+#popup-overlay.active {
+opacity: 1;
+pointer-events: all;
+}
+
+/* ─── POPUP WRAPPER ─────────────────────────────────────── */
+.popup-wrapper {
+width: 100%;
+max-width: 420px;
+transform: translateY(24px) scale(0.97);
+transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+#popup-overlay.active .popup-wrapper {
+transform: translateY(0) scale(1);
+}
